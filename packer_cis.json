@@ -56,7 +56,8 @@
       "ansible/roles/common",
       "ansible/roles/lynis",
       "ansible/roles/ossec",
-      "ansible/roles/cis"
+      "ansible/roles/cis",
+      "ansible/roles/lynis_hard"
     ],
     "playbook_dir": "ansible",
     "galaxy_file": "ansible/requirements.yaml"
