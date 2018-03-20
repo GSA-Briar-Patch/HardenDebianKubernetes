@@ -1,0 +1,50 @@
+---
+# https://forums.aws.amazon.com/thread.jspa?messageID=821176&tstart=0
+- name: "Packages for SELinux and work around"
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - policycoreutils
+    - selinux-policy-targeted
+    - policycoreutils-python
+    - libselinux-python
+  when: ansible_os_family == 'Amazon'
+
+- name: "Edit grub2 default kernel options to start SELinux"
+  command: sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=\"console=tty0 console=ttyS0,115200n8 /GRUB_CMDLINE_LINUX_DEFAULT=\"console=ttyS0,115200n8 console=tty0 selinux=1 security=selinux enforcing=1 /g' /etc/default/grub
+  when: ansible_os_family == 'Amazon'
+
+- name: "Delete selinux"
+  file:
+    path: /etc/sysconfig/selinux
+    state: absent
+  when: ansible_os_family == 'Amazon'
+
+- name: "Symlink selinux"
+  file:
+    src: /etc/selinux/config
+    dest: /etc/sysconfig/selinux
+    state: link
+  when: ansible_os_family == 'Amazon'
+
+- selinux:
+    policy: targeted
+    state: enforcing
+  when: ansible_os_family == "Debian" or ansible_os_family == 'Ubuntu'
+
+#TODO rewrite this lazy....
+- name: "Make changes to config"
+  command: sed -i 's/SELINUX=disabled/SELINUX=enforcing/g' /etc/selinux/config
+
+- name: "Touch Auto relabel"
+  file:
+    path: /.autorelabel
+    state: touch
+
+- name: "Check to see if grub has been configured"
+  stat: path=/etc/grub2.cfg
+  register: grub_config
+
+- name: "Write grub configuration file"
+  command: grub2-mkconfig -o /etc/grub2.cfg
+  when: grub_config.stat.exists == False

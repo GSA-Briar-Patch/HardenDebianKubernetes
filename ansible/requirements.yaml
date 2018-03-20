@@ -1,0 +1,10 @@
+---
+#- src: anthcourtney.cis-amazon-linux
+#- src: dharrisio.aws-cloudwatch-logs-agent
+- src: geerlingguy.clamav
+- src: tartansandal.awslogs-setup
+- src: konstruktoid.hardening
+
+
+
+#  https://galaxy.ansible.com/konstruktoid/hardening/

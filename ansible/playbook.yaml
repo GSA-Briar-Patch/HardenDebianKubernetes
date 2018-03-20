@@ -1,0 +1,55 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: true    # gather OS info that is made available for tasks/roles
+  become: yes           # majority of CIS tasks require root
+  vars:
+    # CIS Controls whitepaper:  http://bit.ly/2mGAmUc
+    # AWS CIS Whitepaper:       http://bit.ly/2m2Ovrh
+    # Tried to use anthcourtney.cis-amazon-linux but not ready for Amazon2
+    # Cloned and modified
+
+    cis_level_1_exclusions:
+    # 3.4.2 and 3.4.3 effectively blocks access to all ports to the machine
+    ## This can break  automation; ignoring it as there are stronger mechanisms than that
+      - 3.4.2
+      - 3.4.3
+    # Cloudwatch Logs will be used instead of Rsyslog/Syslog-ng
+    ## Same would be true if any other software that doesn't support Rsyslog/Syslog-ng mechanisms
+      - 4.2.1.4
+      - 4.2.2.4
+      - 4.2.2.5
+    # Autofs is no longer installed and we need to ignore it or else will fail
+      - 1.1.19
+    # Possible Anisable errors: https://github.com/anthcourtney/ansible-role-cis-amazon-linux/issues/33
+      - 3.6.2
+      - 5.3.3
+    #https://nordeus.com/blog/engineering/managing-iptables-with-ansible-the-easy-way/
+    #Donovan is lazy and does not want use pwd
+      - 5.2.9
+    cis_pass_max_days: 45
+    cis_umask_default: 002
+    # Cloudwatch Logs Role configuration
+    clamav_daemon_state: started
+    clamav_daemon_enabled: yes
+    clamav_freshclam_daemon_state: started
+    clamav_freshclam_daemon_enabled: yes
+    awslogs_setup_region: us-east-1
+  roles:
+    - common
+    - ossec
+    #  TODO: Need to rewrite all of the SELinux scripts (selinux/README.md)
+    #- selinux
+    #- cis
+    #- cloudwatchlogs
+    - konstruktoid.hardening
+    - lynis
+    - geerlingguy.clamav
+    - tartansandal.awslogs-setup
+    #- alerts
+
+  post_tasks:
+    - name: "configure awslogs for system log files"
+      template:
+        src: roles/common/templates/awslogs.conf.j2
+        dest: /var/awslogs/etc/awslogs.conf
