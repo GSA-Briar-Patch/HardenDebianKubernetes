@@ -42,10 +42,10 @@
     #- selinux
     #- cis
     #- cloudwatchlogs
-    - konstruktoid.hardening
     - lynis
     - geerlingguy.clamav
     - tartansandal.awslogs-setup
+    - konstruktoid.hardening
     #- alerts
 
   post_tasks:
