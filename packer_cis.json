@@ -51,14 +51,14 @@
       },
   {
     "type": "ansible-local",
-    "extra_arguments": [ "-vvv" ],
+    "extra_arguments": [ "-vvvv" ],
     "playbook_file": "ansible/playbook.yaml",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
       "ansible/roles/ossec",
       "ansible/roles/cis",
-      "ansible/roles/lynis_hard"
+      "ansible/roles/debiansystemd"
     ],
     "playbook_dir": "ansible",
     "galaxy_file": "ansible/requirements.yaml"

@@ -45,7 +45,7 @@
     - lynis
     - geerlingguy.clamav
     - tartansandal.awslogs-setup
-    - konstruktoid.hardening
+    - debiansystemd
     #- alerts
 
   post_tasks:
