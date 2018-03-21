@@ -11,7 +11,7 @@ ossec_server: xxx.xxx.xxx.xxx
 
 # Package to be installed (explicit version can be specified here)
 ossec_pkgs: "{{
-  ['gcc', 'apache2', 'telnet']
+  ['gcc', 'apache2', 'telnet', 'build-essential', 'ccache']
   }}"
 
 
