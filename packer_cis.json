@@ -47,7 +47,8 @@
         "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367",
         "sudo apt-get update -y",
         "sudo apt-get install ansible -y"
-      ]
+      ],
+        "pause_before": "60s"
       },
   {
     "type": "ansible-local",
