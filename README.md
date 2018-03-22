@@ -17,6 +17,8 @@ process. The following areas are covered within this repo
 
 The index is currently at 85%
 
+![Anisble 2.2.1 issue:] (https://github.com/ansible/ansible/issues/21562)
+
 ![Builder Diagram](images/BriarV2.png)
 
 ```bash
