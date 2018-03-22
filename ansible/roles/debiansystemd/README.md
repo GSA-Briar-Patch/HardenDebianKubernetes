@@ -22,7 +22,7 @@ Role Variables
 --------------
 
 
-Ansible issues
+Ansible issues 
 https://github.com/ansible/ansible/issues/21562
 
 
