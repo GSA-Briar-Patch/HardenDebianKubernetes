@@ -21,6 +21,11 @@ ubuntu/bionic64
 Role Variables
 --------------
 
+
+Ansible issues
+https://github.com/ansible/ansible/issues/21562
+
+
     redhat_rpm_key: [567E347AD0044ADE55BA8A5F199E2F91FD431D51, 47DB287789B21722B6D95DDE5326810137017186]
 [Red Hat RPM keys](https://access.redhat.com/security/team/key/) for use when `ansible_distribution == "RedHat"`.
 

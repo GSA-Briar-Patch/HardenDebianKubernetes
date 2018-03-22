@@ -51,7 +51,11 @@
       },
   {
     "type": "ansible-local",
-    "extra_arguments": [ "-vvvv" ],
+    "extra_arguments": [
+      "-vvvv",
+      "ANSIBLE_LOCAL_TEMP=$HOME/.ansible/tmp",
+      "ANSIBLE_REMOTE_TEMP=$HOME/.ansible/tmp"
+    ],
     "playbook_file": "ansible/playbook.yaml",
     "role_paths": [
       "ansible/roles/common",
