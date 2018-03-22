@@ -56,6 +56,7 @@
       "-vvvv"
     ],
     "playbook_file": "ansible/playbook.yaml",
+    "staging_directory": "/tmp",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
