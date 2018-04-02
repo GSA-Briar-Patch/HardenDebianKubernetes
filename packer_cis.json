@@ -52,8 +52,7 @@
   {
     "type": "ansible-local",
     "extra_arguments": [
-      "-vvvv",
-      "amazon_locale=us-east-1"
+      "-vvvv"
     ],
     "clean_staging_directory": true,
     "staging_directory": "/tmp/ansible",
