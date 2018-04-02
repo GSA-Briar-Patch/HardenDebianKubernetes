@@ -47,7 +47,7 @@
         "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367",
         "sudo apt-get update -y",
         "sudo apt-get install ansible -y",
-        "mkdir /tmp/"
+        "mkdir /tmp/ansible"
       ]
       },
   {
@@ -57,7 +57,7 @@
     ],
     "clean_staging_directory": true,
     "playbook_file": "ansible/playbook.yaml",
-    "staging_directory": "/tmp",
+    "staging_directory": "/tmp/ansible",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
