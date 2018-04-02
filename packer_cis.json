@@ -55,7 +55,6 @@
       "-vvvv"
     ],
     "clean_staging_directory": true,
-    "staging_directory": "/tmp/ansible",
     "playbook_file": "ansible/playbook.yaml",
     "role_paths": [
       "ansible/roles/common",
