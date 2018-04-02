@@ -52,10 +52,12 @@
   {
     "type": "ansible-local",
     "extra_arguments": [
-      "-vvvv"
+      "-vvvv",
+      "amazon_locale=us-east-1"
     ],
+    "clean_staging_directory": true,
+    "staging_directory": "/tmp/ansible",
     "playbook_file": "ansible/playbook.yaml",
-    "playbook_dir": "../../ansible",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
