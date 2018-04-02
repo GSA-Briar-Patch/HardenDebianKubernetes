@@ -19,7 +19,7 @@
     - lynis
     - geerlingguy.clamav
     - tartansandal.awslogs-setup
-    - debiansystemd
+    #- debiansystemd
     #- alerts
 
   post_tasks:
