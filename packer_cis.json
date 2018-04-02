@@ -58,8 +58,6 @@
     ],
     "clean_staging_directory": true,
     "playbook_file": "ansible/playbook.yaml",
-    "playbook_dir": "/tmp/ansible",
-    "staging_directory": "/tmp/ansible",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
