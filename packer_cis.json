@@ -2,7 +2,8 @@
   "variables": {
     "vpc": "{{env `BUILD_VPC_ID`}}",
     "subnet": "{{env `BUILD_SUBNET_ID`}}",
-    "aws_region": "{{env `AWS_REGION`}}"
+    "aws_region": "{{env `AWS_REGION`}}",
+    "home": "{{ env `HOME` }}"
   },
   "builders": [{
     "ami_name": "HARDEN-DEBIAN-{{isotime \"02-Jan-06\"}}",
@@ -56,7 +57,7 @@
       "-vvvv"
     ],
     "playbook_file": "ansible/playbook.yaml",
-    "staging_directory": "/tmp",
+    "playbook_dir": "{{ user `home` }}/.ansible/",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
