@@ -2,8 +2,7 @@
   "variables": {
     "vpc": "{{env `BUILD_VPC_ID`}}",
     "subnet": "{{env `BUILD_SUBNET_ID`}}",
-    "aws_region": "{{env `AWS_REGION`}}",
-    "home": "{{ env `HOME` }}"
+    "aws_region": "{{env `AWS_REGION`}}"
   },
   "builders": [{
     "ami_name": "HARDEN-DEBIAN-{{isotime \"02-Jan-06\"}}",
@@ -48,8 +47,7 @@
         "sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367",
         "sudo apt-get update -y",
         "sudo apt-get install ansible -y"
-      ],
-        "pause_before": "60s"
+      ]
       },
   {
     "type": "ansible-local",
@@ -57,12 +55,12 @@
       "-vvvv"
     ],
     "playbook_file": "ansible/playbook.yaml",
-    "playbook_dir": "{{ user `home` }}/.ansible/",
+    "playbook_dir": "../../ansible",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
       "ansible/roles/ossec",
-      "ansible/roles/cis",
+      "ansible/roles/selinux",
       "ansible/roles/debiansystemd"
     ],
     "playbook_dir": "ansible",
