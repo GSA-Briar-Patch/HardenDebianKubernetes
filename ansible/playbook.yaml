@@ -14,12 +14,9 @@
   roles:
     - common
     - ossec
-    #  TODO: Need to rewrite all of the SELinux scripts (selinux/README.md)
-    #- selinux
     - lynis
     - geerlingguy.clamav
     - tartansandal.awslogs-setup
-    #- lockdown
     - ansible-hardening
     #- alerts
 
