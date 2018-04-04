@@ -1,11 +1,11 @@
 ---
-- include: 02_firewall.yml
-- include: 03_disablenet.yml
-- include: 04_disablefs.yml
-- include: 05_systemdconf.yml
-- include: 06_journalconf.yml
-- include: 07_timesyncd.yml
-- include: 08_fstab.yml
+- include: 02_firewall.yaml
+- include: 03_disablenet.yaml
+- include: 04_disablefs.yaml
+- include: 05_systemdconf.yaml
+- include: 06_journalconf.yaml
+- include: 07_timesyncd.yaml
+- include: 08_fstab.yaml
 - include: 09_prelink.yml
 - include: 10_pkgupdate.yml
 - include: 11_hosts.yml

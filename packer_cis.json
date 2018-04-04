@@ -6,7 +6,7 @@
   },
   "builders": [{
     "ami_name": "HARDEN-DEBIAN-{{isotime \"02-Jan-06\"}}",
-    "ami_description": "Harden Debian 1.8 Strech",
+    "ami_description": "Harden Debian 1.8 Stretch",
     "associate_public_ip_address": "true",
     "instance_type": "t2.micro",
     "name": "Harden Debian",

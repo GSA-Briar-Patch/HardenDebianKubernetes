@@ -19,7 +19,8 @@
     - lynis
     - geerlingguy.clamav
     - tartansandal.awslogs-setup
-    - debiansystemd
+    #- lockdown
+    - ansible-hardening
     #- alerts
 
   post_tasks:

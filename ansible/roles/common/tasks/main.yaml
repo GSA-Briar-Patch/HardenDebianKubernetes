@@ -1,6 +1,6 @@
 ---
-
-- name: "Ensure Debian/Ubuntu Linux packages have been patched"
+###  Software, Control PKGS-7392
+- name: "Software, Control PKGS-7392:  Ensure Debian/Ubuntu Linux packages have been patched"
   apt: update_cache=yes cache_valid_time=3600
   register: apt_result
   until: apt_result|success
