@@ -67,7 +67,7 @@
       "ansible/roles/lynis",
       "ansible/roles/ossec",
       "ansible/roles/selinux",
-      "ansible/roles/debiansystemd"
+      "ansible/roles/ansible-hardening"
     ],
     "playbook_dir": "ansible",
     "galaxy_file": "ansible/requirements.yaml"
