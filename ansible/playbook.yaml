@@ -16,8 +16,9 @@
     - ossec
     - lynis
     - geerlingguy.clamav
-    - tartansandal.awslogs-setup
-    - ansible-hardening
+     - tartansandal.awslogs-setup
+    - konstruktoid.hardening
+    #- k8s-hard-os
     #- alerts
 
   post_tasks:

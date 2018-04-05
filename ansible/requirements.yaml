@@ -1,4 +1,5 @@
 ---
 - src: geerlingguy.clamav
 - src: tartansandal.awslogs-setup
-#  https://galaxy.ansible.com/konstruktoid/hardening/
+- src: konstruktoid.hardening
+  #https://galaxy.ansible.com/konstruktoid/hardening/
