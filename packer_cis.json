@@ -59,14 +59,12 @@
     "extra_arguments": [
       "-vvvv"
     ],
-    "clean_staging_directory": true,
-    "staging_directory": "/tmp/ansible",
     "playbook_file": "ansible/playbook.yaml",
     "role_paths": [
       "ansible/roles/common",
       "ansible/roles/lynis",
       "ansible/roles/ossec",
-      "ansible/roles/ansible-hardening"
+      "ansible/roles/k8s-hard-os"
     ],
     "playbook_dir": "ansible",
     "galaxy_file": "ansible/requirements.yaml"
